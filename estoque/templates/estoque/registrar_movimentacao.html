@@ -1,0 +1,23 @@
+{% extends "estoque/base.html" %}
+
+{% block title %}Movimentar Produto{% endblock %}
+
+{% block content %}
+<h2>Movimentar Produto: {{ produto.nome }}</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label class="form-label">Tipo:</label>
+    <select name="tipo" class="form-control">
+        <option value="entrada">Entrada</option>
+        <option value="saida">Saída</option>
+    </select>
+
+    <label class="form-label mt-2">Quantidade:</label>
+    <input type="number" name="quantidade" min="1" class="form-control" required>
+
+    <button class="btn btn-primary mt-3">Registrar</button>
+</form>
+
+{% endblock %}

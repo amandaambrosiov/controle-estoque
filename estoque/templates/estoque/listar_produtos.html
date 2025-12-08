@@ -1,0 +1,49 @@
+{% extends "estoque/base.html" %}
+
+{% block title %}Lista de Produtos{% endblock %}
+
+{% block content %}
+<h2 class="mb-3">Lista de Produtos</h2>
+
+<a href="{% url 'adicionar_produto' %}" class="btn btn-primary mb-3">Adicionar Produto</a>
+
+<a href="{% url 'historico_geral' %}" class="btn btn-secondary mb-3">
+    Histórico Geral
+</a>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Qtd</th>
+            <th>Categoria</th>
+            <th>Fornecedor</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for produto in produtos %}
+        <tr>
+            <td>{{ produto.nome }}</td>
+            <td>R$ {{ produto.preco }}</td>
+            <td>{{ produto.quantidade }}</td>
+            <td>{{ produto.categoria }}</td>
+            <td>{{ produto.fornecedor }}</td>
+            <td>
+                <a href="{% url 'editar_produto' produto.id %}" class="btn btn-sm btn-warning">Editar</a>
+                <a href="{% url 'registrar_movimentacao' produto.id %}" class="btn btn-sm btn-info">Movimentar</a>
+                
+                <a href="{% url 'excluir_produto' produto.id %}" class="btn btn-sm btn-danger">Excluir</a>
+
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="6" class="text-center">Nenhum produto cadastrado.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

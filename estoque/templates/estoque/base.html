@@ -7,9 +7,9 @@
 </head>
 <body class="bg-light">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+<nav class="navbar navbar-expand-lg navbar mb-4" style="background-color: cornflowerblue;">
     <div class="container">
-        <a href="/" class="navbar-brand">Controle de Estoque</a>
+        <a href="/" class="navbar-brand" style="color: white;">Sistema Controle de Estoque</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
             <span class="navbar-toggler-icon"></span>
@@ -20,19 +20,19 @@
             <ul class="navbar-nav ms-auto">
 
                 <!-- PRODUTOS -->
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'listar_produtos' %}">Produtos</a>
+                <li class="nav-item" >
+                    <a class="nav-link" href="{% url 'listar_produtos' %}" style="color: white;">Produtos</a>
                 </li>
 
                 <!-- CATEGORIAS -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'lista_categorias' %}">Categorias</a>
+                    <a class="nav-link" href="{% url 'lista_categorias' %}" style="color: white;">Categorias</a>
                 </li>
 
 
                 <!-- FORNECEDORES -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'lista_fornecedores' %}">Fornecedores</a>
+                    <a class="nav-link" href="{% url 'lista_fornecedores' %}" style="color: white;">Fornecedores</a>
                 </li>
 
 
